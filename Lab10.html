@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Creating Maps with Leaflet</title>
+<link rel="stylesheet" href=https://unpkg.com/leaflet@1.9.3/dist/leaflet.css integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="crossorigin=""/>
+<script src=https://unpkg.com/leaflet@1.9.3/dist/leaflet.js integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
+</head>
+<body>
+<div id="map" style="height: 600px"></div>
+<script>
+var map = L.map('map').setView([13.7563, 100.5018], 10);
+L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+var greenIcon = L.icon({
+iconUrl: 'coffee.png',
+iconSize: [20, 30], 
+iconAnchor: [0, 0], 
+popupAnchor: [15,-5] 
+});
+
+L.marker([13.7465837, 100.5346123],{icon:greenIcon}).addTo(map).bindPopup("<b>Starbucks Coffee Siam Paragon</b><br>Pathum Wan, Bangkok<br>");
+L.marker([13.7444472, 100.5308014],{icon:greenIcon}).addTo(map).bindPopup("<b>Starbucks Coffee Siamscape</b><br>Pathum Wan, Bangkok<br>");
+L.marker([13.7451965, 100.5303551],{icon:greenIcon}).addTo(map).bindPopup("<b>Starbucks Coffee MBK</b><br>Pathum Wan, Bangkok<br>");
+L.marker([13.7285148, 100.5349436],{icon:greenIcon}).addTo(map).bindPopup("<b>Starbucks Coffee Silom Complex</b><br>Bang Rak, Bangkok<br>");
+L.marker([13.7439768, 100.5459136],{icon:greenIcon}).addTo(map).bindPopup("<b>Starbucks Coffee Central Embassy</b><br>Pathum Wan, Bangkok<br>");
+L.marker([13.7400132, 100.5244511],{icon:greenIcon}).addTo(map).bindPopup("<b>Starbucks Coffee I’m Park Chula</b><br>Pathum Wan, Bangkok<br>");
+L.marker([13.7336413, 100.5282986],{icon:greenIcon}).addTo(map).bindPopup("<b>Starbucks Coffee Samyan Mitrtown</b><br>Pathum Wan, Bangkok<br>");
+</script>
+</body
+</html>
